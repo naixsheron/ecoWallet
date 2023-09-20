@@ -34,11 +34,11 @@
             </div>
             <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
             <script>
-                var months = @json($months); // Converțiți array-ul PHP într-un obiect JavaScript JSON
-                var monthCount = @json($monthPrice); // Converțiți array-ul PHP într-un obiect JavaScript JSON
+                let months = @json($months); // Converțiți array-ul PHP într-un obiect JavaScript JSON
+                let monthCount = @json($monthPrice); // Converțiți array-ul PHP într-un obiect JavaScript JSON
 
-                var ctx = document.getElementById('myLineChart').getContext('2d');
-                var myLineChart = new Chart(ctx, {
+                let ctx = document.getElementById('myLineChart').getContext('2d');
+                let myLineChart = new Chart(ctx, {
                     type: 'line', // Setăm tipul de grafic la 'line'
                     data: {
                         labels: months, // Lunile vor fi etichetele pe axa X

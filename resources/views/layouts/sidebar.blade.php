@@ -73,11 +73,7 @@
                 <a href="/land" class="nav-link "><i class="fas fa-map-marker-alt"></i> <span>LAND eco</span></a>
          
         
-            <li class="menu-header">Pages</li>
-            <li class="dropdown">
-              <input type="text" class="form-control" name="datepicker" id="datepicker" />
-         
-            </li>
+           
        
          </ul>
        

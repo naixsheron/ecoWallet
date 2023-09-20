@@ -124,6 +124,7 @@
         </div>
       </div>              
     </div>
+    
     <div class="row">
       <div class="col-lg-6 col-md-12 col-12 col-sm-12">
         <div class="card">
@@ -133,6 +134,7 @@
             <div class="card-body">
               <canvas id="myChart"></canvas>
             </div>
+            
           </div>
           
       </div>
@@ -196,5 +198,60 @@
         </div>
       </div>
     </div>
+  
+    <script>
+      // Obțineți elementul canvas
+      let ctx = document.getElementById('myChart').getContext('2d');
+    
+      // Configurați opțiunile graficului
+      let options = {
+        scales: {
+          y: {
+            beginAtZero: true // Axele încep de la zero
+          }
+        }
+      };
+    
+      // Faceți solicitarea către API-ul de aur
+      let myHeaders = new Headers();
+      myHeaders.append("x-access-token", "goldapi-2k6hhslrlmryvnm0-io");
+      myHeaders.append("Content-Type", "application/json");
+    
+      let requestOptions = {
+        method: 'GET',
+        headers: myHeaders,
+        redirect: 'follow'
+      };
+    
+      fetch("https://www.goldapi.io/api/XAU/USD", requestOptions)
+        .then(response => response.json()) // Răspunsul este în format JSON, deci îl parsăm
+        .then(data => {
+          // Extrageți prețul aurului din obiectul de răspuns
+          const goldPrice = data.price;
+    
+          // Definiți datele pentru grafic folosind prețul aurului
+          let chartData = {
+            labels: ['Gold Price'],
+            datasets: [{
+              label: 'Gold Price',
+              data: [goldPrice],
+              backgroundColor: 'rgba(255, 215, 0, 0.2)', // Culorile pentru fundal
+              borderColor: 'rgba(255, 215, 0, 1)', // Culorile pentru linie
+              borderWidth: 2, // Grosimea liniei
+            }]
+          };
+    
+          // Inițializați un obiect Chart pentru graficul cu prețul aurului
+          let goldChart = new Chart(ctx, {
+            type: 'line', // Tipul graficului
+            data: chartData, // Datele
+            options: options // Opțiunile
+          });
+        })
+        .catch(error => console.log('error', error));
+    </script>
+    
+    
+    
   </section> 
 @endsection

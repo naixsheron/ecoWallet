@@ -64,9 +64,13 @@
                 $totalPercentage = $normalizedPercentageBook + $normalizedPercentageGold + $totalPercentageGolds + $totalPercentageCodes;
              
                 @endphp
-                <div class="progress mb-3" style="height: 25px;">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="{{ $totalPercentage }}" aria-valuemin="0" aria-valuemax="100" style="width: {{$totalPercentage}}%;"></div>
-                </div>
+            <div class="progress mb-3" style="height: 25px;">
+              <div class="progress-bar" role="progressbar" aria-valuenow="{{ $totalPercentage }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ $totalPercentage }}%;">
+                  <span>{{ number_format($totalPercentage, 2) }}%</span>
+              </div>
+          </div>
+          
+            
             </div>
             
           </div>

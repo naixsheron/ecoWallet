@@ -34,11 +34,11 @@
             </div>
             <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
             <script>
-                var months = @json($months); // Converțiți array-ul PHP într-un obiect JavaScript JSON
-                var monthCount = @json($monthCount); // Converțiți array-ul PHP într-un obiect JavaScript JSON
+                let months = @json($months); // Converțiți array-ul PHP într-un obiect JavaScript JSON
+                let monthCount = @json($monthCount); // Converțiți array-ul PHP într-un obiect JavaScript JSON
 
-                var ctx = document.getElementById('myLineChart').getContext('2d');
-                var myLineChart = new Chart(ctx, {
+                let ctx = document.getElementById('myLineChart').getContext('2d');
+                let myLineChart = new Chart(ctx, {
                     type: 'line', // Setăm tipul de grafic la 'line'
                     data: {
                         labels: months, // Lunile vor fi etichetele pe axa X
@@ -81,7 +81,7 @@
                             @foreach ($golds  as $index => $gold)
                             <tr>
                                 <td>{{ $index + 1 }}</td>
-                                <td><img src="{{ $gold->banner }}" style="width: 40px" alt="Imagine aur"></td>
+                                <td><img src="{{ $gold->banner }}" style="width: 40px" class="rounded-circle" alt="Imagine aur"></td>
                                 <td>{{ $gold->title }}</td>
                                 <td>{{ $gold->author }}</td>
                                 <td>{{ $gold->created_at }}</td>
