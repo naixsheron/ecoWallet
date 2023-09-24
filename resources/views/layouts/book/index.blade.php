@@ -12,10 +12,9 @@
           <div class="row">
             <div class="col-12 col-md-5 col-lg-5">
               <?php
-              // Numărați cărțile din baza de date
+
               $numBooks = \App\Models\Book::count();
               
-              // Calculați procentajul completat
               $completionPercentage = ($numBooks / 120) * 100;
               ?>
               
@@ -64,7 +63,64 @@
             </script>
             
             </div>
+            
             <div class="col-12 col-md-7 col-lg-7">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Read every month</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="buttons">
+                            @php
+                                // Obțineți data primei înregistrări din baza de date
+                                $firstRecordDate = $books->min('created_at');
+                                
+                                // Asigurați-vă că data primei înregistrări este validă
+                                if ($firstRecordDate) {
+                                    $currentDate = $firstRecordDate->startOfMonth();
+                                } else {
+                                    // Dacă nu există înregistrări, începeți cu o dată implicită
+                                    $currentDate = now()->setDate(2023, 8, 1)->startOfMonth();
+                                }
+                                
+                                // Inițializați un array cu lunile și anii din baza de date created_at
+                                $monthsAndYearsInDatabase = [];
+                        
+                                foreach ($books as $book) {
+                                    $bookMonthYear = date('F Y', strtotime($book->created_at));
+                                    if (!in_array($bookMonthYear, $monthsAndYearsInDatabase)) {
+                                        $monthsAndYearsInDatabase[] = $bookMonthYear;
+                                    }
+                                }
+                            @endphp
+                        
+                            @for ($i = 0; $i < 120; $i++)
+                                @php
+                                    // Verificați dacă luna și anul curente există în baza de date created_at
+                                    $hasRead = in_array($currentDate->format('F Y'), $monthsAndYearsInDatabase);
+                                   
+
+                                @endphp
+                        
+                                @if ($hasRead)
+                                    <a href="#" class="btn btn-icon btn-success"><i class="fas fa-check"></i></a>
+                                @else
+                                    <a href="#" class="btn btn-icon btn-danger"><i class="fas fa-times"></i></a>
+                                @endif
+                        
+                                @php
+                                    // Trecem la luna următoare
+                                    $currentDate->addMonth();
+                                @endphp
+                            @endfor
+                        </div>
+                        
+                        
+                    </div>
+                    
+                </div>
+                
+                
               <div class="card">
                 <div class="card-header">
                   <h4>All Books </h4>
@@ -136,16 +192,11 @@
                       </ul>
                   </nav>
               </div>
+           
               
               </div>
             </div>
           </div>
-   
-  
-   
-    
-   
-  
 
   </section> 
 

@@ -16,6 +16,7 @@ class BookController extends Controller
      */
     public function index()
     {
+
         // Obțineți toate înregistrările din tabela 'books', sortate după id în ordine descrescătoare
         $books = Book::orderByDesc('id')->paginate(8);
 
