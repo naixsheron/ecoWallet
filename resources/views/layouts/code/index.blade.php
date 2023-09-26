@@ -66,7 +66,7 @@
         <div class="col-12 col-md-7 col-lg-7">
             <div class="card">
                 <div class="card-header">
-                    <h4>All Code </h4>
+                    <h4 style="color:#4F4789 ; font-weight:800">All Code </h4>
                 </div>
                 <div class="card-body p-0">
                     <div class="table-responsive">

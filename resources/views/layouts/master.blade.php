@@ -46,7 +46,7 @@
         <div class="row ml-1 mr-1">
           <div class="card w-100" style="background-color: #FFF3F0">
               <div class="card-header">
-                  <h4 style="color: #4F4789">Total score <i class="fas fa-arrow-right"></i> 2033</h4>
+                <h4 style="color:#4F4789 ; font-weight:800">Total score <i class="fas fa-arrow-right"></i> 2033</h4>
               </div>
               <div class="card-body">
                 @php

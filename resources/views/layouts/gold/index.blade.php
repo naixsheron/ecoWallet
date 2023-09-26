@@ -26,7 +26,7 @@
             </div>
             <div class="card">
                 <div class="card-header">
-                    <h4>Gold Chart</h4>
+                    <h4 style="color:#4F4789 ; font-weight:800">Gold Chart</h4>
                 </div>
                 <div class="card-body">
                     <canvas id="myLineChart"></canvas>
@@ -62,74 +62,79 @@
 
         </div>
         <div class="col-12 col-md-7 col-lg-7">
-            <div class="card">
-                <div class="card-header">
-                    <h4>All Gold </h4>
-                </div>
-                <div class="card-body p-0">
-                    <div class="table-responsive">
-                        <table class="table table-striped table-md">
-                            <tr>
-                                <th>#</th>
-                                <th>Image</th>
-                                <th>Titlu</th>
-                                <th>Author</th>
-                                <th>Created At</th>
-                                <th>Price</th>
-                                <th>Details</th>
-                            </tr>
-                            @foreach ($golds  as $index => $gold)
-                            <tr>
-                                <td>{{ $index + 1 }}</td>
-                                <td><img src="{{ $gold->banner }}" style="width: 40px" class="rounded-circle" alt="Imagine aur"></td>
-                                <td>{{ $gold->title }}</td>
-                                <td>{{ $gold->author }}</td>
-                                <td>{{ $gold->created_at }}</td>
-                                <td>{{ $gold->price }}</td>
-                                <td>{{ $gold->details }}</td>
-                    
-                            </tr>
-                            @endforeach
-                        </table>
-                    </div>
-                </div>
-                <div class="card-footer text-right">
-                    <nav class="d-inline-block">
-                        <ul class="pagination mb-0">
-                            @if ($golds->onFirstPage())
-                                <li class="page-item disabled">
-                                    <span class="page-link" href="#"><i class="fas fa-chevron-left"></i></span>
-                                </li>
-                            @else
-                                <li class="page-item">
-                                    <a class="page-link" href="{{ $golds->previousPageUrl() }}"><i class="fas fa-chevron-left"></i></a>
-                                </li>
-                            @endif
+        <div class="card mt-5" >
+    <div class="card-header" style="background-color: #FFECB3;">
+        <h4 style="color: #FF5733; font-size: 24px; font-weight: bold;">All Gold</h4>
+    </div>
+    <div class="card-body p-0">
+        <div class="table-responsive">
+            <table style="border: 2px solid #FFECB3; width: 100%; border-collapse: collapse;">
+                <tr style="background-color: #FFECB3; color: #3B0D11;">
+                    <th style="border: 2px solid #FFECB3; padding: 12px; font-size: 15px; font-weight: 900; color: #FF5733;">#</th>
+                    <th style="border: 2px solid #FFECB3; padding: 12px; font-size: 15px; font-weight: 900; color: #FF5733;">Image</th>
+                    <th style="border: 2px solid #FFECB3; padding: 12px; font-size: 15px; font-weight: 900; color: #FF5733;">Titlu</th>
+                    <th style="border: 2px solid #FFECB3; padding: 12px; font-size: 15px; font-weight: 900; color: #FF5733;">Author</th>
+                    <th style="border: 2px solid #FFECB3; padding: 12px; font-size: 15px; font-weight: 900; color: #FF5733;">Created At</th>
+                    <th style="border: 2px solid #FFECB3; padding: 12px; font-size: 15px; font-weight: 900; color: #FF5733;">Price</th>
+                    <th style="border: 2px solid #FFECB3; padding: 12px; font-size: 15px; font-weight: 900; color: #FF5733;">Details</th>
+                </tr>
+                @foreach ($golds as $index => $gold)
+                <tr style="background-color: #fff;">
+                    <td style="border: 2px solid #FFECB3; padding: 5px 10px; color: #FF5733; font-size: 14px; font-weight: 600;">{{ $index + 1 }}</td>
+                    <td style="border: 2px solid #FFECB3; padding:  5px 10px;"><img src="{{ $gold->banner }}" style="width: 60px" class="rounded-circle" alt="Imagine aur"></td>
+                    <td style="border: 2px solid #FFECB3; padding:  5px 10px; color: #3B0D11; font-size: 14px; font-weight: 600;">{{ $gold->title }}</td>
+                    <td style="border: 2px solid #FFECB3; padding:  5px 10px; color: #3B0D11; font-size: 14px; font-weight: 600;">{{ $gold->author }}</td>
+                    <td style="border: 2px solid #FFECB3; padding:  5px 10px; color: #3B0D11; font-size: 14px; font-weight: 600;">{{ $gold->created_at }}</td>
+                    <td style="border: 2px solid #FFECB3; padding:  5px 10px; color: #3B0D11; font-size: 14px; font-weight: 600;">{{ $gold->price }}</td>
+                    <td style="border: 2px solid #FFECB3; padding:  5px 10px; color: #3B0D11; font-size: 14px; font-weight: 600;">{{ $gold->details }}</td>
+                </tr>
+                @endforeach
+            </table>
+        </div>
+        <div class="card-footer text-right">
+            <nav class="d-inline-block">
+                <ul class="pagination mb-0">
+                    @if ($golds->onFirstPage())
+                        <li class="page-item disabled">
+                            <span class="page-link" href="#"><i class="fas fa-chevron-left"></i></span>
+                        </li>
+                    @else
+                        <li class="page-item">
+                            <a class="page-link" href="{{ $golds->previousPageUrl() }}"><i class="fas fa-chevron-left"></i></a>
+                        </li>
+                    @endif
 
-                            @foreach ($golds->getUrlRange(1, $golds->lastPage()) as $page => $url)
-                                @if ($page == $golds->currentPage())
-                                    <li class="page-item active">
-                                        <span class="page-link">{{ $page }}</span>
-                                    </li>
-                                @else
-                                    <li class="page-item">
-                                        <a class="page-link" href="{{ $url }}">{{ $page }}</a>
-                                    </li>
-                                @endif
-                            @endforeach
+                    @foreach ($golds->getUrlRange(1, $golds->lastPage()) as $page => $url)
+                        @if ($page == $golds->currentPage())
+                            <li class="page-item active">
+                                <span class="page-link">{{ $page }}</span>
+                            </li>
+                        @else
+                            <li class="page-item">
+                                <a class="page-link" href="{{ $url }}">{{ $page }}</a>
+                            </li>
+                        @endif
+                    @endforeach
 
-                            @if ($golds->hasMorePages())
-                                <li class="page-item">
-                                    <a class="page-link" href="{{ $golds->nextPageUrl() }}"><i class="fas fa-chevron-right"></i></a>
-                                </li>
-                            @else
-                                <li class="page-item disabled">
-                                    <span class="page-link" href="#"><i class="fas fa-chevron-right"></i></span>
-                                </li>
-                            @endif
-                        </ul>
-                    </nav>
-                </div>
+                    @if ($golds->hasMorePages())
+                        <li class="page-item">
+                            <a class="page-link" href="{{ $golds->nextPageUrl() }}"><i class="fas fa-chevron-right"></i></a>
+                        </li>
+                    @else
+                        <li class="page-item disabled">
+                            <span class="page-link" href="#"><i class="fas fa-chevron-right"></i></span>
+                        </li>
+                    @endif
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+            
+            
+            
+               
             </div>
         </div>
     </div>
