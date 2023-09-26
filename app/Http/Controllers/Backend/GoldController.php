@@ -16,7 +16,7 @@ class GoldController extends Controller
      */
     public function index()
     {
-        $golds = Gold::orderByDesc('id')->paginate(8);
+        $golds = Gold::orderByDesc('id')->paginate(5);
 
         $data = Gold::select('id', 'created_at')->get()->groupBy(function ($gold) {
             return Carbon::parse($gold->created_at)->format('Y');

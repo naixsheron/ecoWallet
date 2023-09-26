@@ -29,10 +29,10 @@
   @endphp
   
     
-    <div class="row">
+    <div class="row ml-2 mr-2" style="margin-top:-17px">
         
       <div class="col-lg-2 col-md-6 col-sm-6 col-12">
-        <div class="card card-statistic-1">
+        <div class="card card-statistic-1" >
           <div class="card-icon bg-primary">
             <i class="fas fa-coins"></i>
           </div>
@@ -125,11 +125,11 @@
       </div>              
     </div>
     
-    <div class="row">
+    <div class="row ml-3 mr-3">
       <div class="col-lg-3 col-md-12 col-12 col-sm-12">
-        <div class="card">
+        <div class="card" style="margin-top:-8px; border:5px solid #4F4789 ; border-radius:25% ; box-shadow: 3px 5px 5px 5px #1657ac ">
           <div class="card-header">
-            <h4 style="color:#4F4789 ; font-weight:800">My Chart</h4>
+            <h4 style="color:#4F4789 ; font-weight:800 ; margin-left:30px ">My Chart</h4>
           </div>
           <div class="card-body">
             <canvas id="myChart4"></canvas>
@@ -148,11 +148,11 @@
           </div>
           
       </div> --}}
-      <div class="col-lg-4 col-md-4 col-12">
+      <div class="col-lg-4 col-md-4 col-12 ">
             
-        <div class="card">
+        <div class="card" style="margin-top:-8px; border:5px solid #106706 ; border-radius:5% ; box-shadow: 3px 5px 5px 5px #2ec011 ">
           <div class="card-header">
-            <h4 style="color:#4F4789 ; font-weight:800">Inline Status</h4>
+            <h4 style="color:#4F4789 ; font-weight:800" >Inline Status</h4>
           </div>
           <div class="card-body">
             <div class="mb-4">
@@ -208,21 +208,21 @@
         </div>
       </div>
       <div class="col-12 col-sm-5 col-lg-5">
-        <div class="card">
+        <div class="card" style="margin-top:-8px; border:5px solid #915408 ; border-radius:5% ; box-shadow: 3px 5px 5px 5px #ee6503 ">
           <div class="card-header">
             <h4 style="color:#4F4789 ; font-weight:800">Motivating</h4>
           </div>
           <div class="card-body">
-            <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
+            <div id="carouselExampleFade" class="carousel slide carousel-fade" style="max-width:535px" data-ride="carousel">
               <div class="carousel-inner">
                 <div class="carousel-item active">
-                  <img class="d-block w-100" src="img/news/img01.jpg" alt="First slide">
+                  <img class="d-block w-100" src="img/news/img01.jpg" style="border-radius:15%" alt="First slide">
                 </div>
                 <div class="carousel-item">
-                  <img class="d-block w-100" src="img/news/img07.jpg" alt="Second slide">
+                  <img class="d-block w-100" src="img/news/img07.jpg" style="border-radius:15%" alt="Second slide">
                 </div>
                 <div class="carousel-item">
-                  <img class="d-block w-100" src="img/news/img08.jpg" alt="Third slide">
+                  <img class="d-block w-100" src="img/news/img08.jpg" style="border-radius:15%" alt="Third slide">
                 </div>
               </div>
               <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
