@@ -2,7 +2,7 @@
  
 @section('content')
 
-<section class="section">
+<section class="section" style="max-width: 1850px">
                   
           <div class="row ml-4 mr-4">
                 <div class="col-12 col-md-6 col-lg-6">
@@ -62,14 +62,14 @@
               </div>
             
             <div class="col-12 col-md-6 col-lg-6">
-                <div class="card" style= "background-color: #fceeee ; border:5px solid #ff5733 ; border-radius:4%; box-shadow:2px 5px 10px black">
+                <div class="card" style= "padding-bottom:12px; background-color: #fceeee ; border:5px solid #ff5733 ; border-radius:4%; box-shadow:2px 5px 10px black">
                     <div class="card-header">
                         <h4 style="color: #ff5733; font-size: 22px; font-weight: 800;">Read every month </h4>
                     </div>
                     <div class="card-body ml-5 mr-3 mb-4 mt-2">
                         <div class="buttons">
                             @php
-                                // Obțineți data primei înregistrări din baza de date
+                              
                                 $firstRecordDate = $books->min('created_at');
                                 
                                 // Asigurați-vă că data primei înregistrări este validă

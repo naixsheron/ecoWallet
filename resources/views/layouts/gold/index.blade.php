@@ -2,7 +2,7 @@
 
 @section('content')
 
-<section class="section">
+<section class="section" style="max-width: 1850px">
 
     <div class="row ml-1 mr-1">
         <div class="col-12 col-md-6 col-lg-6 mt-3" >
@@ -20,7 +20,7 @@
                            <div class="progress-bar bg-success" role="progressbar" aria-valuenow="{{ $numGolds }}" aria-valuemin="0" aria-valuemax="32" style="width: {{ $completionPercentage}}%;">{{ $numGolds }} / 32</div>
                       </div>
                  </div>
-                 <div class="card" style= "border:5px solid rgb(212, 207, 207) ; border-bottom-left-radius: 10%;  border-bottom-right-radius: 10%; box-shadow:5px 10px 10px rgb(126, 125, 125)" >
+                 <div class="card" style= "padding-bottom:10px; border:5px solid rgb(212, 207, 207) ; border-bottom-left-radius: 10%;  border-bottom-right-radius: 10%; box-shadow:5px 10px 10px rgb(126, 125, 125)" >
                         <div class="card-header">
                              <h4 style="color:#4F4789 ; font-weight:800">Gold Chart</h4>
                        </div>

@@ -2,7 +2,7 @@
  
 @section('content')
 
-<section class="section">
+<section class="section" style="max-width: 1850px">
 
   @php
   // Numărul de cărți și gold-uri din baza de date
