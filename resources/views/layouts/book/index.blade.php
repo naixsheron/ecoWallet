@@ -13,8 +13,8 @@
                             $completionPercentage = ($numBooks / 120) * 100;
                          ?>
               
-                      <div class="card-header">
-                        <h4 style="color:#4F4789 ; font-weight:800">Book Score</h4>
+                      <div class="card-header" style= "border:5px solid rgb(212, 207, 207) ; border-top-left-radius: 10%; border-top-right-radius: 10%; box-shadow:5px 10px 10px rgb(126, 125, 125)">
+                        <h4 style="color:#4F4789 ; font-weight:800" >Book Score</h4>
                             <div class="progress mt-5">
                                <div class="progress-bar bg-success" role="progressbar" aria-valuenow="{{ $numBooks }}" aria-valuemin="0" aria-valuemax="12" style="width: {{ $completionPercentage}}%;">{{ $numBooks }} / 12</div>
                            </div>

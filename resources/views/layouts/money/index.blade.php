@@ -18,13 +18,13 @@
             $completionPercentage = ($totalPrice / 100000) * 100;
             ?>
 
-            <div class="card-header">
+            <div class="card-header" style="margin-top:-15px; border:5px solid rgb(212, 207, 207) ; border-top-left-radius: 10%; border-top-right-radius: 10%; box-shadow:5px 10px 10px rgb(126, 125, 125)">
                 <h4>Gold Score</h4>
                 <div class="progress mt-5">
                     <div class="progress-bar bg-success" role="progressbar" aria-valuenow="{{  $totalPrice }}" aria-valuemin="0" aria-valuemax="32" style="width: {{ $completionPercentage}}%;">{{ $totalPrice }} / 100000</div>
                 </div>
             </div>
-            <div class="card">
+            <div class="card" style= "padding-bottom:10px; border:5px solid rgb(212, 207, 207) ; border-bottom-left-radius: 10%;  border-bottom-right-radius: 10%; box-shadow:5px 10px 10px rgb(126, 125, 125)">
                 <div class="card-header">
                     <h4>Gold Chart</h4>
                 </div>
